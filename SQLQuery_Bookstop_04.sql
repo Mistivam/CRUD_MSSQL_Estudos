@@ -11,6 +11,7 @@ CREATE TABLE tb_estoque(
 	nome_Livro VARCHAR (100),
 	assunto_livro VARCHAR(40),
 	preco_livro DECIMAL(10,2)
+	CONSTRAINT PK_ID_livro PRIMARY KEY (ID_livro)
 	);
 
 CREATE TABLE tb_vendedores(
@@ -89,4 +90,18 @@ DELETE FROM tb_vendedores WHERE ID_vendedor = 1;
 
 SELECT * FROM tb_vendedores;
 
+-- Nosso chefe pediu para criarmos uma nova tabela para o estoque. Ele também pediu para incluírmos uma CONSTRAINT --
+-- Ele também definiu que devemos impedir campos nulos na nossa base de dados --
+
+DROP TABLE tb_estoque;
+
+CREATE TABLE tb_estoque(
+	ID_livro INTEGER IDENTITY (1,1) NOT NULL,
+	nome_Livro VARCHAR (100) NOT NULL,
+	assunto_livro VARCHAR(40) NOT NULL,
+	preco_livro DECIMAL(10,2) NOT NULL
+	CONSTRAINT PK_ID_livro PRIMARY KEY (ID_livro)
+	);
+
+-- Nosso chefe gostou do resultado e pediu para fazermos o mesmo com a tabela vendedores --
 
