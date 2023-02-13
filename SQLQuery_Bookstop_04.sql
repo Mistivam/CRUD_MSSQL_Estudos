@@ -58,3 +58,35 @@ UPDATE tb_estoque SET preco_livro = 40.00 WHERE ID_livro = 1;
 DELETE FROM tb_estoque WHERE ID_livro = 3;
 
 SELECT * FROM tb_estoque;
+
+-- ALTERAR / UPDATE --
+
+-- A funcionária Marcela Lucena se separou, e pediu para o RH atualizar seus dados. Devemos fazer o mesmo! --
+
+UPDATE tb_vendedores SET nome_vendedor = 'Marcela Carvalho' WHERE ID_vendedor = 3;
+
+SELECT * FROM tb_vendedores;
+
+-- Chegaram novos livros para serem cadastrados no nosso estoque --
+
+INSERT INTO tb_estoque (nome_Livro, assunto_livro,preco_livro)
+VALUES 
+	('O Chamado de Cthulhu ', 'Terror', 35.00),
+	('Carmilla a Vampira de Karnstein', 'Terror', 69.90),
+	('O Lobo do Mar', 'Ficção-Aventura', 40.00),
+	('Crime e Castigo', 'Romance', 79.90),
+	('O Segredo de Luísa', 'Administração', 49.90);
+
+-- Mais um vendedor foi admitido --
+
+INSERT INTO tb_vendedores (nome_vendedor, total_vendas)
+VALUES
+	('Larissa Santanna', 0);
+
+-- O funcionário Caio Lucena conseguiu um emprego na área de TI e pediu demissão. Excluí-lo da tabela de vendedores --
+
+DELETE FROM tb_vendedores WHERE ID_vendedor = 1;
+
+SELECT * FROM tb_vendedores;
+
+
