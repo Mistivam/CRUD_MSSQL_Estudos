@@ -10,8 +10,7 @@ CREATE TABLE tb_estoque(
 	ID_livro INTEGER PRIMARY KEY (ID_Livro) IDENTITY (1,1),
 	nome_Livro VARCHAR (100),
 	assunto_livro VARCHAR(40),
-	preco_livro DECIMAL(10,2)
-	CONSTRAINT PK_ID_livro PRIMARY KEY (ID_livro)
+	preco_livro DECIMAL(10,2)	
 	);
 
 CREATE TABLE tb_vendedores(
@@ -104,4 +103,25 @@ CREATE TABLE tb_estoque(
 	);
 
 -- Nosso chefe gostou do resultado e pediu para fazermos o mesmo com a tabela vendedores --
+
+SELECT * FROM tb_estoque;
+
+DROP TABLE tb_vendedores;
+
+CREATE TABLE tb_vendedores(
+	matricula INTEGER IDENTITY (1,1) NOT NULL,
+	nome_vendedor VARCHAR (100) NOT NULL,
+	departamento VARCHAR (50) NOT NULL,
+	salario FLOAT NOT NULL,
+	vendas FLOAT NOT NULL,
+	CONSTRAINT PK_matricula PRIMARY KEY(matricula)
+	);
+
+	SELECT * FROM tb_vendedores;
+
+	-- Agora que criamos as planilhas, na véspera do feriado de Carnaval, sexta feira ás 17:50 nosso chefe nos mandou --
+	-- popular as planilhas de estoque e vendedor --
+
+
+
 
