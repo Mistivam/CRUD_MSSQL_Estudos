@@ -164,7 +164,17 @@ INSERT INTO tb_vendas (matricula, vendas)
 		(1, 13076.00),
 		(2, 15430.90);
 
+INSERT INTO tb_vendedores(nome_vendedor, departamento, salario)
+	VALUES
+		('Raimundo Nonato', 'vendas chat', 2500.00),
+		('Cláudia Santos', 'vendas loja', 2500.00);
 
+SELECT * FROM tb_vendedores;
+
+INSERT INTO tb_vendas (matricula, vendas)
+	VALUES
+		(3, 18960.00),
+		(4, 14430.90);
 			
 
 		
