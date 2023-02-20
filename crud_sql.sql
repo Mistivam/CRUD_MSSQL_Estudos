@@ -1,6 +1,6 @@
--- Operações CRUD Treinamento --
+-- OperaÃ§Ãµes CRUD Treinamento --
 
--- realizando operações CRUD no estoque da loja Bookstop (uma loja fictícia para estudos) --
+-- realizando operaÃ§Ãµes CRUD no estoque da loja Bookstop (uma loja fictÃ­cia para estudos) --
 
 -- CRIAR / CREATE --
 
@@ -22,13 +22,13 @@ CREATE TABLE tb_vendedores(
 SELECT * FROM tb_estoque;
 SELECT * FROM tb_vendedores;
 
--- INSERIR INFORMAÇÃO / INSERT DATA --
+-- INSERIR INFORMAÃ‡ÃƒO / INSERT DATA --
 
 INSERT INTO tb_estoque (nome_Livro, assunto_livro,preco_livro)
 VALUES 
-	('Código Limpo', 'Computação', 50.00),
-	('Use a Cabeça!: Java', 'Computação', 60.00),
-	('Fundamentos de Matemática Elementar', 'Matemática', 40.00);
+	('CÃ³digo Limpo', 'ComputaÃ§Ã£o', 50.00),
+	('Use a CabeÃ§a!: Java', 'ComputaÃ§Ã£o', 60.00),
+	('Fundamentos de MatemÃ¡tica Elementar', 'MatemÃ¡tica', 40.00);
 
 INSERT INTO tb_vendedores (nome_vendedor, total_vendas)
 VALUES
@@ -43,14 +43,14 @@ SELECT * FROM tb_vendedores;
 SELECT * FROM tb_vendedores;
 SELECT * FROM tb_estoque;
 
--- O livro 'Código Limpo' está em promoção só neste fim de semana !--
--- Corra já para a Bookstop mais próxima de você e leve o seu pra casa! --
+-- O livro 'CÃ³digo Limpo' estÃ¡ em promoÃ§Ã£o sÃ³ neste fim de semana !--
+-- Corra jÃ¡ para a Bookstop mais prÃ³xima de vocÃª e leve o seu pra casa! --
 
 UPDATE tb_estoque SET preco_livro = 40.00 WHERE ID_livro = 1;
 
 -- EXCLUIR /DELETE --
 
--- Por conta da volta às aulas todos os exemplares do livro ' Fundamentos de Matemática Elementar foram vendidos! --
+-- Por conta da volta Ã s aulas todos os exemplares do livro ' Fundamentos de MatemÃ¡tica Elementar foram vendidos! --
 -- Precisamos atualizar a nossa base de dados --
 
 DELETE FROM tb_estoque WHERE ID_livro = 3;
@@ -59,7 +59,7 @@ SELECT * FROM tb_estoque;
 
 -- ALTERAR / UPDATE --
 
--- A funcionária Marcela Lucena se separou, e pediu para o RH atualizar seus dados. Devemos fazer o mesmo! --
+-- A funcionÃ¡ria Marcela Lucena se separou, e pediu para o RH atualizar seus dados. Devemos fazer o mesmo! --
 
 UPDATE tb_vendedores SET nome_vendedor = 'Marcela Carvalho' WHERE ID_vendedor = 3;
 
@@ -71,9 +71,9 @@ INSERT INTO tb_estoque (nome_Livro, assunto_livro,preco_livro)
 VALUES 
 	('O Chamado de Cthulhu ', 'Terror', 35.00),
 	('Carmilla a Vampira de Karnstein', 'Terror', 69.90),
-	('O Lobo do Mar', 'Ficção-Aventura', 40.00),
+	('O Lobo do Mar', 'FicÃ§Ã£o-Aventura', 40.00),
 	('Crime e Castigo', 'Romance', 79.90),
-	('O Segredo de Luísa', 'Administração', 49.90);
+	('O Segredo de LuÃ­sa', 'AdministraÃ§Ã£o', 49.90);
 
 -- Mais um vendedor foi admitido --
 
@@ -81,14 +81,14 @@ INSERT INTO tb_vendedores (nome_vendedor, total_vendas)
 VALUES
 	('Larissa Santanna', 0);
 
--- O funcionário Caio Lucena conseguiu um emprego na área de TI e pediu demissão. Excluí-lo da tabela de vendedores --
+-- O funcionÃ¡rio Caio Lucena conseguiu um emprego na Ã¡rea de TI e pediu demissÃ£o. ExcluÃ­-lo da tabela de vendedores --
 
 DELETE FROM tb_vendedores WHERE ID_vendedor = 1;
 
 SELECT * FROM tb_vendedores;
 
--- Nosso chefe pediu para criarmos uma nova tabela para o estoque. Ele também pediu para incluírmos uma CONSTRAINT --
--- Ele também definiu que devemos impedir campos nulos na nossa base de dados --
+-- Nosso chefe pediu para criarmos uma nova tabela para o estoque. Ele tambÃ©m pediu para incluÃ­rmos uma CONSTRAINT --
+-- Ele tambÃ©m definiu que devemos impedir campos nulos na nossa base de dados --
 
 DROP TABLE tb_estoque;
 
@@ -115,28 +115,28 @@ CREATE TABLE tb_vendedores(
 
 	SELECT * FROM tb_vendedores;
 
-	-- Agora que criamos as planilhas, na véspera do feriado de Carnaval, sexta feira ás 17:50 nosso chefe nos mandou --
+	-- Agora que criamos as planilhas, na vÃ©spera do feriado de Carnaval, sexta feira Ã¡s 17:50 nosso chefe nos mandou --
 	-- popular as planilhas de estoque e vendedor --
 
 	INSERT INTO tb_estoque(nome_Livro, assunto_livro, preco_livro)
 			VALUES 
-				('A Revolução dos Bichos', 'Ficção', 12.90),
+				('A RevoluÃ§Ã£o dos Bichos', 'FicÃ§Ã£o', 12.90),
 				('O Hobbit', 'Fantasia', 41.90),
 				('Coraline', 'Fantasia',43.90),
-				('O Pequeno Príncipe', 'Infantil', 16.30),
-				('E não sobrou nenhum', 'suspense', 32.90),
-				('Coleção Harry Potter', 'Fantasia', 199.90),
+				('O Pequeno PrÃ­ncipe', 'Infantil', 16.30),
+				('E nÃ£o sobrou nenhum', 'suspense', 32.90),
+				('ColeÃ§Ã£o Harry Potter', 'Fantasia', 199.90),
 				('O Chamado de Cthulhu ', 'Terror', 35.00),
 				('Carmilla a Vampira de Karnstein', 'Terror', 69.90),
-				('O Lobo do Mar', 'Ficção-Aventura', 40.00),
+				('O Lobo do Mar', 'FicÃ§Ã£o-Aventura', 40.00),
 				('Crime e Castigo', 'Romance', 79.90),
-				('O Segredo de Luísa', 'Administração', 49.90);
+				('O Segredo de LuÃ­sa', 'AdministraÃ§Ã£o', 49.90);
 
 SELECT * FROM tb_estoque;
 
 INSERT INTO tb_vendedores(nome_vendedor, departamento, salario, vendas)
 	VALUES
-		('José da Silva', 'vendas chat', 2500.00, 13076.00),
+		('JosÃ© da Silva', 'vendas chat', 2500.00, 13076.00),
 		('Maria Souza', 'vendas loja', 2500.00, 15430.90);
 
 SELECT * FROM tb_vendedores;
@@ -151,8 +151,8 @@ CREATE TABLE tb_vendas(
 	vendas NUMERIC (10,2)
 	);
 
-/*Nosso chefe também pediu para cadastrarmos uma Foreign Key para a tabela vendas e devemos usar a 
-  matrícula do vendedor */
+/*Nosso chefe tambÃ©m pediu para cadastrarmos uma Foreign Key para a tabela vendas e devemos usar a 
+  matrÃ­cula do vendedor */
 
 ALTER TABLE tb_vendas ADD CONSTRAINT FK_matricula FOREIGN KEY (matricula)
 	REFERENCES tb_vendedores (matricula);
@@ -167,7 +167,7 @@ INSERT INTO tb_vendas (matricula, vendas)
 INSERT INTO tb_vendedores(nome_vendedor, departamento, salario)
 	VALUES
 		('Raimundo Nonato', 'vendas chat', 2500.00),
-		('Cláudia Santos', 'vendas loja', 2500.00);
+		('ClÃ¡udia Santos', 'vendas loja', 2500.00);
 
 SELECT * FROM tb_vendedores;
 
@@ -175,6 +175,16 @@ INSERT INTO tb_vendas (matricula, vendas)
 	VALUES
 		(3, 18960.00),
 		(4, 14430.90);
+			
+
+-- Nosso chefe pediu para contarmos quantos livros temos em estoque	
+
+SELECT COUNT (*) FROM tb_estoque;
+
+-- Agora nosso chefe quer saber a mÃ©dia de preÃ§os dos nossos livros
+
+SELECT AVG(preco_livro) FROM tb_estoque WHERE preco_livro > 0;
+
 			
 
 		
