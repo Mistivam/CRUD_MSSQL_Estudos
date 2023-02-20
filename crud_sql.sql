@@ -177,4 +177,10 @@ INSERT INTO tb_vendas (matricula, vendas)
 		(4, 14430.90);
 			
 
-		
+-- Nosso chefe pediu para contarmos quantos livros temos em estoque	
+
+SELECT COUNT (*) FROM tb_estoque;
+
+-- Agora nosso chefe quer saber a média de preços dos nossos livros
+
+SELECT AVG(preco_livro) FROM tb_estoque WHERE preco_livro > 0;
